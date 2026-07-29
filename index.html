@@ -15,6 +15,7 @@
       --border: #1f2937;
       --shadow: rgba(0, 0, 0, 0.35);
       --heading: #f9fafb;
+      --font-size-base: 16px;
     }
 
     [data-theme="light"] {
@@ -35,16 +36,17 @@
 
     body {
       margin: 0;
-      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.55;
+      line-height: 1.6;
       padding: 0 0 64px;
+      font-size: var(--font-size-base);
       transition: background 0.25s ease, color 0.25s ease;
     }
 
     .container {
-      max-width: 920px;
+      max-width: 860px;
       margin: 0 auto;
       padding: 24px 18px 40px;
     }
@@ -60,9 +62,9 @@
     }
 
     .navbar-inner {
-      max-width: 920px;
+      max-width: 860px;
       margin: 0 auto;
-      padding: 12px 18px;
+      padding: 10px 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -71,9 +73,9 @@
 
     .brand {
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: var(--heading);
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
     }
 
     .controls {
@@ -86,11 +88,12 @@
       background: var(--card-bg);
       border: 1px solid var(--border);
       color: var(--text);
-      padding: 6px 10px;
+      padding: 5px 9px;
       border-radius: 8px;
       font-size: 0.85rem;
       cursor: pointer;
       transition: transform 0.05s ease, border-color 0.2s ease, background 0.2s ease;
+      font-family: inherit;
     }
 
     .btn:hover {
@@ -102,7 +105,7 @@
     }
 
     .label {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--text-muted);
     }
 
@@ -112,10 +115,10 @@
     }
 
     h1 {
-      font-size: 1.7rem;
-      line-height: 1.2;
+      font-size: 1.6rem;
+      line-height: 1.25;
       margin: 0 0 8px;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.015em;
       color: var(--heading);
     }
 
@@ -123,6 +126,7 @@
       color: var(--text-muted);
       font-size: 0.95rem;
       margin: 0;
+      max-width: 720px;
     }
 
     hr {
@@ -132,29 +136,31 @@
     }
 
     h2 {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       margin: 24px 0 10px;
       letter-spacing: -0.01em;
       color: var(--heading);
     }
 
     h3 {
-      font-size: 1rem;
+      font-size: 0.98rem;
       margin: 16px 0 6px;
       color: var(--heading);
     }
 
     p {
-      margin: 8px 0 12px;
+      margin: 10px 0 14px;
+      max-width: 720px;
     }
 
     ul {
-      margin: 6px 0 12px 18px;
+      margin: 8px 0 14px 20px;
       padding: 0;
+      max-width: 720px;
     }
 
     li {
-      margin: 6px 0;
+      margin: 8px 0;
     }
 
     a {
@@ -170,9 +176,9 @@
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 12px;
-      margin: 16px 0;
+      margin: 18px 0;
       overflow: hidden;
-      box-shadow: 0 6px 18px var(--shadow);
+      box-shadow: 0 8px 22px var(--shadow);
     }
 
     summary {
@@ -188,6 +194,8 @@
       align-items: center;
       justify-content: space-between;
       gap: 10px;
+      font-family: inherit;
+      color: var(--text);
     }
 
     summary::-webkit-details-marker {
@@ -209,53 +217,8 @@
     }
 
     .details-content {
-      padding: 4px 16px 16px 16px;
+      padding: 6px 16px 18px 16px;
       border-top: 1px solid var(--border);
-    }
-
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 10px 0 4px;
-    }
-
-    .tag {
-      display: inline-block;
-      font-size: 0.75rem;
-      padding: 3px 9px;
-      border-radius: 999px;
-      background: linear-gradient(180deg, rgba(96, 165, 250, 0.15), rgba(96, 165, 250, 0.05));
-      color: var(--accent);
-      border: 1px solid rgba(96, 165, 250, 0.35);
-    }
-
-    .tag.secondary {
-      background: linear-gradient(180deg, rgba(52, 211, 153, 0.15), rgba(52, 211, 153, 0.05));
-      color: var(--accent-2);
-      border: 1px solid rgba(52, 211, 153, 0.35);
-    }
-
-    .link-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 8px;
-    }
-
-    .link-pill {
-      display: inline-block;
-      font-size: 0.85rem;
-      padding: 6px 10px;
-      border-radius: 10px;
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      color: var(--text);
-    }
-
-    .link-pill:hover {
-      border-color: var(--accent);
-      text-decoration: none;
     }
 
     @media (max-width: 640px) {
@@ -266,7 +229,7 @@
         font-size: 1.35rem;
       }
       h2 {
-        font-size: 1.15rem;
+        font-size: 1.12rem;
       }
       .navbar-inner {
         padding: 10px 14px;
@@ -283,7 +246,7 @@
         <button class="btn" id="fontSmaller" title="Smaller font">A-</button>
         <button class="btn" id="fontLarger" title="Larger font">A+</button>
         <span class="label" style="margin-left: 6px;">Theme</span>
-        <button class="btn" id="themeToggle" title="Toggle dark/light mode">🌓</button>
+        <button class="btn" id="themeToggle" title="Toggle dark/light mode">☀/☾</button>
       </div>
     </div>
   </div>
@@ -301,20 +264,6 @@
     <p>
       David Choi combines high-stakes Delaware legal experience, shipped AI products in regulated domains, and fluency with the tools lawyers use daily. This matches the core need for the AI Strategist, Legal role: someone who understands legal work, can design and evaluate AI systems, and translate between lawyers, product, and engineering.
     </p>
-
-    <div class="tag-row">
-      <span class="tag">Delaware corporate &amp; litigation</span>
-      <span class="tag">AI product builder</span>
-      <span class="tag secondary">Legal tech fluent</span>
-    </div>
-
-    <div class="link-list">
-      <a class="link-pill" href="https://www.linkedin.com/in/davidchoi8/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="link-pill" href="https://www.mystockalgo.com/" target="_blank" rel="noopener">MyStockAlgo</a>
-      <a class="link-pill" href="https://clifton-topaz.vercel.app/" target="_blank" rel="noopener">Clinical Trial Finder</a>
-      <a class="link-pill" href="https://www.swansonsapple.org/" target="_blank" rel="noopener">Swanson's Apple (LBD)</a>
-      <a class="link-pill" href="https://medicare-plan-picker.vercel.app/" target="_blank" rel="noopener">Medicare Plan Picker</a>
-    </div>
 
     <!-- Section 1 -->
     <details>
@@ -411,4 +360,48 @@
         </ul>
 
         <p>
-          This means a clear understanding
+          This means a clear understanding of how lawyers search for authority and precedent, review and tag large document sets, and organize facts, issues, and timelines. He can identify where AI can save time without sacrificing rigor, design workflows that fit existing habits, and speak credibly to legal customers about how Perplexity complements or improves on their current tool stack.
+        </p>
+      </div>
+    </details>
+
+    <!-- Section 4 -->
+    <details>
+      <summary>
+        <span class="summary-title">4. Translator Between Law, Product, and Engineering</span>
+        <span class="chevron">▾</span>
+      </summary>
+      <div class="details-content">
+        <p>
+          This is the core value-add for the AI Strategist, Legal role.
+        </p>
+
+        <h3>Ability to work with lawyers</h3>
+        <p>
+          David Choi has worked on sophisticated Delaware matters and understands the stakes (fiduciary exposure, valuation risk, transactional risk), the workflows (research, drafting, discovery, negotiation), and the language (standards of review, procedural doctrines, governance structures).
+        </p>
+
+        <h3>Ability to work with engineers and product</h3>
+        <p>
+          He has built trading systems with AI agents (e.g., <a href="https://www.mystockalgo.com/" target="_blank" rel="noopener">mystockalgo.com</a>), research platforms for investing strategies, and health-tech tools for clinical trials (<a href="https://clifton-topaz.vercel.app/" target="_blank" rel="noopener">clifton-topaz.vercel.app</a>) and drug repurposing (<a href="https://www.swansonsapple.org/" target="_blank" rel="noopener">swansonsapple.org</a>). He understands data pipelines, ranking, and search; agentic systems and AI-assisted reasoning; and deploying apps in the cloud and locally.
+        </p>
+
+        <h3>Ability to work with customers and GTM</h3>
+        <p>
+          He can frame AI capabilities in terms of legal outcomes (better strategy, faster research, reduced risk), help design pilots and use cases that resonate with GCs, partners, and legal ops, and support sales and product by translating customer needs into product requirements and vice versa.
+        </p>
+      </div>
+    </details>
+
+    <!-- Section 5 -->
+    <details>
+      <summary>
+        <span class="summary-title">5. Concrete Examples From Legal Work</span>
+        <span class="chevron">▾</span>
+      </summary>
+      <div class="details-content">
+        <p>
+          These examples make the case specific and credible.
+        </p>
+
+        <h3>Legal complexity → structured
