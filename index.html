@@ -5,237 +5,239 @@
   <title>Case for Candidacy: AI Strategist, Legal — David Choi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    :root {
-      --bg: #0b0f14;
-      --card-bg: #111820;
-      --text: #e5e7eb;
-      --text-muted: #9ca3af;
-      --accent: #60a5fa;
-      --accent-2: #34d399;
-      --border: #1f2937;
-      --shadow: rgba(0, 0, 0, 0.35);
-      --heading: #f9fafb;
-      --font-size-base: 16px;
-    }
+  :root {
+    /* Light mode as default */
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text: #0f172a;
+    --text-muted: #475569;
+    --accent: #2563eb;
+    --accent-2: #059669;
+    --border: #e2e8f0;
+    --shadow: rgba(15, 23, 42, 0.08);
+    --heading: #0b1220;
+    --font-size-base: 16px;
+  }
 
-    [data-theme="light"] {
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
-      --text: #0f172a;
-      --text-muted: #475569;
-      --accent: #2563eb;
-      --accent-2: #059669;
-      --border: #e2e8f0;
-      --shadow: rgba(15, 23, 42, 0.08);
-      --heading: #0b1220;
-    }
+  [data-theme="dark"] {
+    /* Dark mode override */
+    --bg: #0b0f14;
+    --card-bg: #111820;
+    --text: #e5e7eb;
+    --text-muted: #9ca3af;
+    --accent: #60a5fa;
+    --accent-2: #34d399;
+    --border: #1f2937;
+    --shadow: rgba(0, 0, 0, 0.35);
+    --heading: #f9fafb;
+  }
 
-    * {
-      box-sizing: border-box;
-    }
+  * {
+    box-sizing: border-box;
+  }
 
-    body {
-      margin: 0;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      padding: 0 0 64px;
-      font-size: var(--font-size-base);
-      transition: background 0.25s ease, color 0.25s ease;
-    }
+  body {
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 0 0 64px;
+    font-size: var(--font-size-base);
+    transition: background 0.25s ease, color 0.25s ease;
+  }
 
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 18px 40px;
+  }
+
+  /* Navbar */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(8px);
+  }
+
+  .navbar-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 10px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .brand {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--heading);
+    letter-spacing: -0.01em;
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .btn {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 5px 9px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: transform 0.05s ease, border-color 0.2s ease, background 0.2s ease;
+    font-family: inherit;
+  }
+
+  .btn:hover {
+    border-color: var(--accent);
+  }
+
+  .btn:active {
+    transform: translateY(1px);
+  }
+
+  .label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+
+  /* Header */
+  .header {
+    padding: 28px 0 10px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    line-height: 1.25;
+    margin: 0 0 8px;
+    letter-spacing: -0.015em;
+    color: var(--accent); /* colored header */
+  }
+
+  .subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+    max-width: 720px;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 22px 0;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    margin: 24px 0 10px;
+    letter-spacing: -0.01em;
+    color: var(--accent); /* colored headers */
+  }
+
+  h3 {
+    font-size: 0.98rem;
+    margin: 16px 0 6px;
+    color: var(--heading);
+  }
+
+  p {
+    margin: 10px 0 14px;
+    max-width: 720px;
+  }
+
+  ul {
+    margin: 8px 0 14px 20px;
+    padding: 0;
+    max-width: 720px;
+  }
+
+  li {
+    margin: 8px 0;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  details {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 18px 0;
+    overflow: hidden;
+    box-shadow: 0 8px 22px var(--shadow);
+  }
+
+  summary {
+    cursor: pointer;
+    padding: 14px 16px;
+    font-weight: 600;
+    font-size: 1.02rem;
+    background: linear-gradient(180deg, rgba(37, 99, 235, 0.06), transparent);
+    user-select: none;
+    list-style: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    font-family: inherit;
+    color: var(--text);
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .summary-title {
+    flex: 1;
+  }
+
+  .chevron {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    transition: transform 0.15s ease;
+  }
+
+  details[open] .chevron {
+    transform: rotate(180deg);
+  }
+
+  .details-content {
+    padding: 6px 16px 18px 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  @media (max-width: 640px) {
     .container {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 24px 18px 40px;
+      padding: 16px 14px 40px;
     }
-
-    /* Navbar */
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(8px);
-    }
-
-    .navbar-inner {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 10px 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .brand {
-      font-weight: 700;
-      font-size: 0.9rem;
-      color: var(--heading);
-      letter-spacing: -0.01em;
-    }
-
-    .controls {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .btn {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      color: var(--text);
-      padding: 5px 9px;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      cursor: pointer;
-      transition: transform 0.05s ease, border-color 0.2s ease, background 0.2s ease;
-      font-family: inherit;
-    }
-
-    .btn:hover {
-      border-color: var(--accent);
-    }
-
-    .btn:active {
-      transform: translateY(1px);
-    }
-
-    .label {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    /* Header */
-    .header {
-      padding: 28px 0 10px;
-    }
-
     h1 {
-      font-size: 1.6rem;
-      line-height: 1.25;
-      margin: 0 0 8px;
-      letter-spacing: -0.015em;
-      color: var(--heading);
+      font-size: 1.35rem;
     }
-
-    .subtitle {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin: 0;
-      max-width: 720px;
-    }
-
-    hr {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 22px 0;
-    }
-
     h2 {
-      font-size: 1.2rem;
-      margin: 24px 0 10px;
-      letter-spacing: -0.01em;
-      color: var(--heading);
+      font-size: 1.12rem;
     }
-
-    h3 {
-      font-size: 0.98rem;
-      margin: 16px 0 6px;
-      color: var(--heading);
+    .navbar-inner {
+      padding: 10px 14px;
     }
-
-    p {
-      margin: 10px 0 14px;
-      max-width: 720px;
-    }
-
-    ul {
-      margin: 8px 0 14px 20px;
-      padding: 0;
-      max-width: 720px;
-    }
-
-    li {
-      margin: 8px 0;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    details {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      margin: 18px 0;
-      overflow: hidden;
-      box-shadow: 0 8px 22px var(--shadow);
-    }
-
-    summary {
-      cursor: pointer;
-      padding: 14px 16px;
-      font-weight: 600;
-      font-size: 1.02rem;
-      background: linear-gradient(180deg, rgba(96, 165, 250, 0.06), transparent);
-      user-select: none;
-      list-style: none;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      font-family: inherit;
-      color: var(--text);
-    }
-
-    summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .summary-title {
-      flex: 1;
-    }
-
-    .chevron {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      transition: transform 0.15s ease;
-    }
-
-    details[open] .chevron {
-      transform: rotate(180deg);
-    }
-
-    .details-content {
-      padding: 6px 16px 18px 16px;
-      border-top: 1px solid var(--border);
-    }
-
-    @media (max-width: 640px) {
-      .container {
-        padding: 16px 14px 40px;
-      }
-      h1 {
-        font-size: 1.35rem;
-      }
-      h2 {
-        font-size: 1.12rem;
-      }
-      .navbar-inner {
-        padding: 10px 14px;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
   <div class="navbar">
@@ -473,65 +475,61 @@
   </div> <!-- end container -->
 
   <script>
-    // Theme toggle
-    const themeToggle = document.getElementById('themeToggle');
-    const html = document.documentElement;
+  // Theme toggle (light default, dark when toggled)
+  const themeToggle = document.getElementById('themeToggle');
+  const html = document.documentElement;
 
-    // Load saved theme
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light' || savedTheme === 'dark') {
-      if (savedTheme === 'light') {
-        html.setAttribute('data-theme', 'light');
-      } else {
-        html.removeAttribute('data-theme');
-      }
+  // Load saved theme
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+  }
+
+  themeToggle.addEventListener('click', () => {
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      html.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+    } else {
+      html.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
     }
+  });
 
-    themeToggle.addEventListener('click', () => {
-      const isLight = html.getAttribute('data-theme') === 'light';
-      if (isLight) {
-        html.removeAttribute('data-theme');
-        localStorage.setItem('theme', 'dark');
-      } else {
-        html.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-      }
-    });
+  // Font size controls
+  const fontSmaller = document.getElementById('fontSmaller');
+  const fontLarger = document.getElementById('fontLarger');
 
-    // Font size controls
-    const fontSmaller = document.getElementById('fontSmaller');
-    const fontLarger = document.getElementById('fontLarger');
+  const fontSizes = [14, 15, 16, 17, 18, 19, 20];
+  let currentFontIndex = 2; // start at 16px
 
-    const fontSizes = [14, 15, 16, 17, 18, 19, 20];
-    let currentFontIndex = 2; // start at 16px
+  function updateFontSize() {
+    document.documentElement.style.setProperty('--font-size-base', fontSizes[currentFontIndex] + 'px');
+    localStorage.setItem('fontSizeIndex', String(currentFontIndex));
+  }
 
-    function updateFontSize() {
-      document.documentElement.style.setProperty('--font-size-base', fontSizes[currentFontIndex] + 'px');
-      localStorage.setItem('fontSizeIndex', String(currentFontIndex));
+  const savedFontIndex = localStorage.getItem('fontSizeIndex');
+  if (savedFontIndex !== null) {
+    const idx = parseInt(savedFontIndex, 10);
+    if (!Number.isNaN(idx) && idx >= 0 && idx < fontSizes.length) {
+      currentFontIndex = idx;
+      updateFontSize();
     }
+  }
 
-    const savedFontIndex = localStorage.getItem('fontSizeIndex');
-    if (savedFontIndex !== null) {
-      const idx = parseInt(savedFontIndex, 10);
-      if (!Number.isNaN(idx) && idx >= 0 && idx < fontSizes.length) {
-        currentFontIndex = idx;
-        updateFontSize();
-      }
+  fontSmaller.addEventListener('click', () => {
+    if (currentFontIndex > 0) {
+      currentFontIndex--;
+      updateFontSize();
     }
+  });
 
-    fontSmaller.addEventListener('click', () => {
-      if (currentFontIndex > 0) {
-        currentFontIndex--;
-        updateFontSize();
-      }
-    });
-
-    fontLarger.addEventListener('click', () => {
-      if (currentFontIndex < fontSizes.length - 1) {
-        currentFontIndex++;
-        updateFontSize();
-      }
-    });
-  </script>
+  fontLarger.addEventListener('click', () => {
+    if (currentFontIndex < fontSizes.length - 1) {
+      currentFontIndex++;
+      updateFontSize();
+    }
+  });
+</script>
 </body>
 </html>
